@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 const db = require('./db');
-let url = 'mongodb://localhost:3000/LinkedinRobots';
+let url = 'mongodb://localhost:27017/robotsDB';
 const handlebars = require('express-handlebars');
 const robotRoutes = require('./routes/robots');
 
