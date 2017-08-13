@@ -10,10 +10,10 @@ routes.get('/', (req, res) => {
   });
 });
 
-routes.get('/:userName', (req, res) => {
-  let collection = db.get().collection('robotCollection');
+// routes.get('/:userName', (req, res) => {
+//   let collection = db.get().collection('robotCollection');
 
-  col.findOne({username: req.params.userName}, (err, robot) => {
+  collection.findOne({username: req.params.userName}, (err, robot) => {
     res.render('job', robot);
   });
 });
