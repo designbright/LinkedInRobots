@@ -5,6 +5,7 @@ const db = require('./db');
 let url = 'mongodb://localhost:27017/robotsDB';
 const handlebars = require('express-handlebars');
 const robotRoutes = require('./routes/robots');
+const mongoose = require('mongoose');
 
 //BOILERPLATE
 
@@ -25,7 +26,9 @@ db.connect(url, (err, connection) => {
     console.log('connected to mongo');
 
   //LISTEN
-  app.listen(3000, function() {
-    console.log('You started the application!');
-  })
-})
+  mongoose
+    // connect to mongo via mongoose. 'robotsDB' is referring to the database already created in Mongo'
+    .connect('mongodb://localhost:27017/robotsDB', { useMongoClient: true })
+    // now we can do whatever we want with mongoose.
+    // configure session support middleware with express-session
+    .then(() => app.listen(3000, () => console.log('ready to roll!!')))});
