@@ -20,6 +20,23 @@ app.use(express.static('public'));
 //ROUTES
 app.use('/', robotRoutes);
 
+
+// collection.find({"job": null}).toArray((err, employees) ==> {
+//   console.log(employees)
+
+
+app.get('/', (req, res) => {
+  let unemployedRobots = db.collection('robotCollection');
+
+  robotCollection.find({ name: req.query.name }, function(err, robot) {
+    if (!robot) {
+      res.send('no robot');
+    } else {
+      res.send(`${robot.job} is ${robot.job}`);
+    }
+  });
+});
+
 //APP
 db.connect(url, (err, connection) => {
   if (!err)

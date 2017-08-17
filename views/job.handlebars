@@ -13,17 +13,10 @@
       <a href="/{{username}}"><img src={{avatar}}></a>
       <h1>{{name}}</h1>
 
-      <!-- <p class="info" id="origin">{{state_or_province}},{{country}}</p> -->
-      <p class="info" id="origin">
-        {{#if address.city}}{{address.city}}, {{/if}}
-        {{#if address.state_or_province}}{{address.state_or_province}}, {{/if}}
-        {{address.country}}
-      </p>
-      <!-- <vr> -->
-
       {{#if job}}
       <p class="info" id="work">{{job}}, {{company}}</p>
       {{/if}}
+      
       {{^job}}
       <p id="availability">Available for hire</p>
       {{/job}}

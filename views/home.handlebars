@@ -8,6 +8,10 @@
 </head>
 
 <body>
+<p class="allRobots"><a href="/">All Robots</a></p>
+<p class="unemployedRobots"><a href="/unemployed">Unemployed</a></p>
+<p class="employed"><a href="/employed">Employed</a></p>
+
   <div id="wrapper">
     {{#users}}
       <div id="user">
@@ -17,6 +21,7 @@
         {{#if job}}
         <p id="info">{{job}}, {{company}}</p>
         {{/if}}
+
         {{^job}}
         <p id="availability">Available for hire</p>
         {{/job}}
